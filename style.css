@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+
+*{
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+     font-family: 'Lora', serif;
+}
+ 
+header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+#heading {
+    background-color: rgb(40, 189, 189);
+    color: white;
+    text-align: left;
+}
+
+.text-headings {
+    display: flex;
+    flex-direction: column;
+}
+
+span {
+    color: rgb(40, 189, 189);
+    padding: 0px 5px;
+}
+
+.main-table {
+    border: thick solid rgb(40, 189, 189);
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    border-spacing: 5px;
+    font-size: 0.9em;
+    min-width: 400px;
+
+}
+
+
+.main-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.main-table tr:nth-of-type(odd){
+    background-color: azure;
+}
+
+.main-table th, .main-table td {
+    padding: 12px 15px;
+}
+
+.main-table tr:last-of-type {
+    border-bottom: 2px solid rgb(36, 41, 41);
+}
+
+.main-table tr.active {
+     font-weight: bold;
+     color: blue;
+}
+
+.score {
+    background-color: rgb(16, 78, 78);
+    color: white;
+}
+
+@media 
+only screen and (max-width: 760px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Act like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50% !important; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "S/N"; }
+	td:nth-of-type(2):before { content: "Students"; }
+	td:nth-of-type(3):before { content: "Mathematics"; }
+	td:nth-of-type(4):before { content: "English"; }
+	td:nth-of-type(5):before { content: "Physics"; }
+	td:nth-of-type(6):before { content: "Chemistry"; }
+	td:nth-of-type(7):before { content: "Biology"; }
+	td:nth-of-type(8):before { content: "Total Score"; }
+}
+
+@media 
+only screen and (max-width: 500px)  {
+    .text-headings {
+        font-size: 8px;
+    }
+}
+
+.whatever {
+    background: #e4eeec;
+}
